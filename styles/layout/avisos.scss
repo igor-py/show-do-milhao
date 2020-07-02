@@ -1,13 +1,50 @@
 .avisos {
-    height: 200px;
-    border: black solid 1px;
+    height: auto;
+    margin-top: 12px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .container-avisos {
+    height: 160px;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+
+.aviso {
+    background-color: $yellow-color;
+    height: 80px;
+    width: 216px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-aviso {
+    color: $header-color;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.anuncio {
+    height: 30%;
+    width: 50%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.texto-anuncio {
+    color: $red-color;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 32px;
 }
