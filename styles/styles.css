@@ -202,10 +202,16 @@ table {
   width: 56px;
   height: 56px;
   margin-left: 16px;
-  border-radius: 100%;
+  border-radius: 50%;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  font-size: 32px; }
+  font-size: 32px;
+  transition: 300ms; }
+  .container-button:hover {
+    transform: scale(1.05); }
+  .container-button:focus {
+    color: black;
+    background-color: #f7f007; }
 
 .texto-resposta {
   color: #e1e3e1;

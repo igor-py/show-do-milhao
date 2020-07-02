@@ -30,11 +30,21 @@
     height: 56px;
     margin-left: 16px;
 
-    border-radius: 100%;
+    border-radius: 50%;
 
     font-family: $main-font;
     font-weight: bold;
     font-size: 32px;
+
+    transition: 300ms;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:focus {
+        color: black;
+        background-color: $yellow-color;
+    }
 }
 
 .texto-resposta {
