@@ -1,0 +1,13 @@
+.avisos {
+    height: 200px;
+    border: black solid 1px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-avisos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

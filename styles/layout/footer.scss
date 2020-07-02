@@ -1,0 +1,14 @@
+#footer {
+    background-color: $footer-color;
+    height: 178px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-dono {
+    color: $main-color;
+    font-family: $footer-font;
+    font-size: 48px;
+}

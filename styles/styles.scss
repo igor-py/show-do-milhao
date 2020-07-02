@@ -1,0 +1,12 @@
+// Reset CSS
+@import "./basic/reset.scss";
+
+// Variables
+@import "./helpers/variables.scss";
+
+// Layout
+@import "./layout/header.scss";
+@import "./layout/perguntas.scss";
+@import "./layout/respostas.scss";
+@import "./layout/avisos.scss";
+@import "./layout/footer.scss";

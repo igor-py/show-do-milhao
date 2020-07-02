@@ -1,0 +1,27 @@
+#main {
+    background-color: $main-color;
+}
+
+.perguntas {
+    background-color: $red-color;
+    height: 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-perguntas {
+    display: flex;
+    text-align: justify;
+    width: 75%;
+    line-height: 8vh;
+}
+
+.pergunta {
+    color: $main-color;
+    font-family: $main-font;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: justify;
+}

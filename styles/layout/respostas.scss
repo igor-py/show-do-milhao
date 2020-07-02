@@ -1,0 +1,40 @@
+.respostas {
+    height: 920px;
+}
+
+.container-respostas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 930px;
+    height: 154px;
+    margin: 72px 0 72px 32%;
+    background-color: $header-color;
+}
+
+.container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+
+    background-color: $main-color;
+    width: 100px;
+    height: 100px;
+
+    margin: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    border-style: none;
+
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.texto-resposta {
+    color: $main-color;
+    font-family: $main-font;
+    font-size: 48px;
+}
