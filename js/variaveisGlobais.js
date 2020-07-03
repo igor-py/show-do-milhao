@@ -1,0 +1,1 @@
+let contador = 0;

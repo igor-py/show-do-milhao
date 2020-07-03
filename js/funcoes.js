@@ -1,4 +1,4 @@
-// Algumas variáveis que serão utilizadas em mais de uma função
+geraPergunta(perguntas[contador]);
 
 // Pega o elemento que colocará o texto na tela
 let msgAviso = document.querySelector(".msg-aviso");
@@ -30,9 +30,7 @@ function geraPergunta(texto = {}) {
 
 function verificaResposta(event) {
 	// Verifica se o jogador quer realmente confirmar a alternativa selecionada
-	const continuar = prompt(
-		"Está certo de sua resposta?\nDigite (s) caso queira e (n) caso queira selecionar outra opção"
-	);
+	const continuar = prompt("Está certo de sua resposta?\nSim(s) ou Não(n)");
 
 	if (continuar.toLowerCase() !== "s") {
 		if (continuar.toLowerCase() !== "n") {
@@ -41,7 +39,7 @@ function verificaResposta(event) {
 		}
 	}
 
-	if (!continuar.toLowerCase() === "s") {
+	if (continuar.toLowerCase() === "n") {
 		return;
 	}
 
@@ -49,38 +47,105 @@ function verificaResposta(event) {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
-			// colocar uma classe que pinte a cor da borda de verde
+			contador += 1;
+
+			setTimeout(() => {
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("acertou");
+				msgAviso.innerText = "";
+			}, 2000);
 		} else {
-			// colocar uma classe que pinte a cor da borda de vermelho
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
+			// Avisar que o jogo acabou e reiniciar o jogo
+			setTimeout(() => {
+				alert(
+					`Você terminou com ${
+						document.querySelectorAll(".texto-aviso")[0].innerHTML
+					}`
+				);
+				contador = 0;
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("errou");
+			}, 2000);
 		}
 	} else if (event.target.innerText === "2") {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			contador += 1;
+
+			setTimeout(() => {
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("acertou");
+				msgAviso.innerText = "";
+			}, 2000);
 		} else {
-			// colocar uma classe que pinte a cor da borda de vermelho
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
+
+			setTimeout(() => {
+				alert(
+					`Você terminou com ${
+						document.querySelectorAll(".texto-aviso")[0].innerHTML
+					}`
+				);
+				contador = 0;
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("errou");
+			}, 2000);
 		}
 	} else if (event.target.innerText === "3") {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			contador += 1;
+
+			setTimeout(() => {
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("acertou");
+				msgAviso.innerText = "";
+			}, 2000);
 		} else {
-			// colocar uma classe que pinte a cor da borda de vermelho
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
+
+			setTimeout(() => {
+				alert(
+					`Você terminou com ${
+						document.querySelectorAll(".texto-aviso")[0].innerHTML
+					}`
+				);
+				contador = 0;
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("errou");
+			}, 2000);
 		}
 	} else if (event.target.innerText === "4") {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			contador += 1;
+
+			setTimeout(() => {
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("acertou");
+				msgAviso.innerText = "";
+			}, 2000);
 		} else {
-			// colocar uma classe que pinte a cor da borda de vermelho
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
+
+			setTimeout(() => {
+				alert(
+					`Você terminou com ${
+						document.querySelectorAll(".texto-aviso")[0].innerHTML
+					}`
+				);
+				contador = 0;
+				geraPergunta(perguntas[contador]);
+				event.path[1].classList.remove("errou");
+			}, 2000);
 		}
 	}
 }
@@ -117,5 +182,28 @@ function sorteiaCartas(event) {
 		console.log("Sorteia 2 cartas");
 	} else {
 		console.log("sorteia 3 cartas");
+	}
+}
+
+// Função que coloca o MIL depois do número
+function formataValor(valor) {
+	if (valor === 1000) {
+		msgAviso.innerHTML = "Pergunta valendo 1 Milhão";
+		return `1 MILHÃO`;
+	} else if (valor === 0) {
+		return "NADA";
+	}
+
+	return `${valor} MIL`;
+}
+
+// Função que altera as situações
+function sitaucaoAtual(valores = []) {
+	// Array com os 3 valores a serem inseridos nas situações
+
+	let situacoes = document.querySelectorAll(".texto-aviso");
+
+	for (let i = 0; i < situacoes.length; i++) {
+		situacoes[i].innerHTML = formataValor(valores[i]);
 	}
 }
