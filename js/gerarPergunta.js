@@ -2,6 +2,7 @@ let pergunta = document.querySelector(".pergunta");
 let opcoes = document.querySelectorAll(".texto-resposta");
 let opcaoCerta;
 let jogadaFeita = true;
+let parar = document.querySelector("#parar");
 
 function geraPergunta(texto = {}) {
 	pergunta.innerHTML = tornarMaiusculo(texto.pergunta);
@@ -14,15 +15,6 @@ function geraPergunta(texto = {}) {
 
 	// Colocando a opção numa variável
 	opcaoCerta = texto.certa;
-	console.log(opcaoCerta);
 }
 
-// Depois que a jogada foi feita, colocar a nova pergunta
-
-/*
-if (jogadaFeita) {
-	console.log("Jogada anterior já foi feita");
-}
-*/
-
-geraPergunta(perguntas[0]);
+geraPergunta(perguntas[14]);
