@@ -29,16 +29,8 @@ function geraPergunta(texto = {}) {
 
 function verificaResposta(event) {
 	// Verifica se o jogador quer realmente confirmar a alternativa selecionada
-	const continuar = prompt("Está certo de sua resposta?\nSim(s) ou Não(n)");
-
-	if (continuar.toLowerCase() !== "s") {
-		if (continuar.toLowerCase() !== "n") {
-			msgAviso.innerHTML = "Você digitou (n) ou (s) errado!!!";
-			return;
-		}
-	}
-
-	if (continuar.toLowerCase() === "n") {
+	const continuar = prompt("Está certo de sua resposta?");
+	if(continuar === null){
 		return;
 	}
 
@@ -66,6 +58,7 @@ function verificaResposta(event) {
 				contador = 0;
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
+				msgAviso.innerText = "";
 			}, 2000);
 		}
 	} else if (event.target.innerText === "2") {
@@ -92,6 +85,7 @@ function verificaResposta(event) {
 				contador = 0;
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
+				msgAviso.innerText = "";
 			}, 2000);
 		}
 	} else if (event.target.innerText === "3") {
@@ -118,6 +112,7 @@ function verificaResposta(event) {
 				contador = 0;
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
+				msgAviso.innerText = "";
 			}, 2000);
 		}
 	} else if (event.target.innerText === "4") {
@@ -144,6 +139,7 @@ function verificaResposta(event) {
 				contador = 0;
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
+				msgAviso.innerText = "";
 			}, 2000);
 		}
 	}
@@ -151,22 +147,7 @@ function verificaResposta(event) {
 
 // Algumas funções importantes
 function pararJogo() {
-	while (true) {
-		const sair = prompt(
-			"Deseja realmente parar?\ndigite (s) para Sim ou (n) para Não"
-		);
-
-		if (sair.toLowerCase() == "s") {
-			terminar = true;
-			break;
-		} else if (sair.toLowerCase() == "n") {
-			break;
-		} else {
-			msgAviso.innerHTML =
-				"Por favor digite (s) ou (n) você digitou um comando não aceito";
-			break;
-		}
-	}
+	alert('Implementar saída do Jogo');
 }
 
 // Função que pega uma carta e retira entre 1 a 3 respostas pra ajudar o participante a acertar
@@ -186,6 +167,9 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 1) {
+				opcoes.forEach((opcao) => {
+					opcao.classList.remove('sumir');
+				})
 				break;
 			}
 		}
@@ -199,6 +183,9 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 2) {
+				opcoes.forEach((opcao) => {
+					opcao.classList.remove('sumir');
+				})
 				break;
 			}
 		}
@@ -212,6 +199,9 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 3) {
+				opcoes.forEach((opcao) => {
+					opcao.classList.remove('sumir');
+				})
 				break;
 			}
 		}
@@ -243,7 +233,14 @@ function sitaucaoAtual(valores = []) {
 
 // função para pular a pergunta atual, pode ser usada somente uma vez
 function pularPergunta() {
-	console.log("pulou a pergunta");
+	alert(`Você tem direito a 3 pulos\nE já usou ${pulos.length}`);
+	
+	if(pulos.length === 3){
+		msgAviso.innerHTML = 'Você não pode mais pular';
+		return;
+	}
+
+	pulos.push(1);
 
 	setTimeout(() => {
 		contador += 1;
