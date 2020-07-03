@@ -1,17 +1,20 @@
 .avisos {
     height: auto;
-    margin-top: 12px;
+    width: 70%;
+    margin: 8px auto;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
 .container-avisos {
     height: 160px;
     margin-bottom: 12px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -24,6 +27,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .texto-aviso {
@@ -43,7 +49,7 @@
 }
 
 .texto-anuncio {
-    color: $red-color;
+    color: black;
     font-family: $main-font;
     font-weight: bold;
     font-size: 32px;

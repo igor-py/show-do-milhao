@@ -150,6 +150,9 @@ table {
   font-family: "Lobster", cursive;
   font-size: 72px; }
 
+body {
+  background-color: #e1e3e1; }
+
 #main {
   background-color: #e1e3e1; }
 
@@ -177,18 +180,57 @@ table {
   text-align: justify; }
 
 .respostas {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; }
+  height: 472px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(4, 1fr); }
+
+.opcoes {
+  background-color: #10106d;
+  border: 8px solid #000;
+  grid-row: 1/5;
+  width: 60%;
+  height: 320px;
+  margin: 0 16px;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr); }
+
+.opcao-button {
+  width: 30%;
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  border-radius: 12px;
+  border-width: thin;
+  border-style: hidden;
+  background-color: #710e00;
+  color: #e1e3e1;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em; }
+  .opcao-button:hover {
+    transform: scale(1.1);
+    background-color: #ff0101; }
+  .opcao-button:focus {
+    color: black;
+    background-color: #f7f007; }
 
 .container-respostas {
+  grid-column: 2/2;
+  grid-row: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start; }
+
+.container-resposta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 720px;
   height: 64px;
-  margin: 16px 16px;
+  margin: 0 16px;
   text-align: justify;
   background-color: #10106d; }
 
@@ -206,9 +248,10 @@ table {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: 32px;
-  transition: 300ms; }
+  transition: 500ms; }
   .container-button:hover {
-    transform: scale(1.05); }
+    transform: scale(1.05);
+    background-color: #010101; }
   .container-button:focus {
     color: black;
     background-color: #f7f007; }
@@ -226,16 +269,18 @@ table {
 
 .avisos {
   height: auto;
-  margin-top: 12px;
+  width: 70%;
+  margin: 8px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center; }
 
 .container-avisos {
   height: 160px;
   margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center; }
 
 .aviso {
@@ -246,6 +291,8 @@ table {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .aviso:hover {
+    transform: scale(1.1); }
 
 .texto-aviso {
   color: #10106d;
@@ -261,7 +308,7 @@ table {
   justify-content: center; }
 
 .texto-anuncio {
-  color: #710e00;
+  color: black;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: 32px; }
