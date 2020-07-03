@@ -7,12 +7,24 @@ respostas.forEach((resposta) => {
 
 function verificaResposta(event) {
 	if (event.target.innerText === "1") {
-		console.log("Clicked 1");
+		if(Number(event.target.innerText) == opcaoCerta){
+			console.log('Você acertou a resposta');
+			// colocar uma classe que pinte a cor da borda de verde
+		} else{
+			// colocar uma classe que pinte a cor da borda de vermelho
+			console.log('Você errou a resposta');
+		}
 	} else if (event.target.innerText === "2") {
-		console.log("clicked 2");
+		if(Number(event.target.innerText) == opcaoCerta){
+			console.log('Você acertou a resposta');
+		}
 	} else if (event.target.innerText === "3") {
-		console.log("clicked 3");
+		if(Number(event.target.innerText) == opcaoCerta){
+			console.log('Você acertou a resposta');
+		}
 	} else if (event.target.innerText === "4") {
-		console.log("clicked 4");
+		if(Number(event.target.innerText) == opcaoCerta){
+			console.log('Você acertou a resposta');
+		}
 	}
 }

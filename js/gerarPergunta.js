@@ -1,5 +1,6 @@
 let pergunta = document.querySelector(".pergunta");
 let opcoes = document.querySelectorAll(".texto-resposta");
+let opcaoCerta;
 let jogadaFeita = true;
 
 function geraPergunta(texto = {}) {
@@ -10,6 +11,10 @@ function geraPergunta(texto = {}) {
 	opcoes[1].innerHTML = texto.opcoes[1];
 	opcoes[2].innerHTML = texto.opcoes[2];
 	opcoes[3].innerHTML = texto.opcoes[3];
+
+	// Colocando a opção numa variável
+	opcaoCerta = texto.certa;
+	console.log(opcaoCerta);
 }
 
 // Depois que a jogada foi feita, colocar a nova pergunta
