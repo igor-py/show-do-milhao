@@ -9,3 +9,6 @@ parar.addEventListener("click", pararJogo);
 
 // Cartas
 document.querySelector("#carta").addEventListener("click", sorteiaCartas);
+
+// Parar
+document.querySelector("#pular").addEventListener("click", pularPergunta);

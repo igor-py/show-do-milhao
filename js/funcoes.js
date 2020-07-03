@@ -14,7 +14,6 @@ function tornarMaiusculo(s) {
 
 function geraPergunta(texto = {}) {
 	let pergunta = document.querySelector(".pergunta");
-	let opcoes = document.querySelectorAll(".texto-resposta");
 
 	pergunta.innerHTML = tornarMaiusculo(texto.pergunta);
 
@@ -173,15 +172,49 @@ function pararJogo() {
 // Função que pega uma carta e retira entre 1 a 3 respostas pra ajudar o participante a acertar
 function sorteiaCartas(event) {
 	let quantidadeCartas = Math.floor(Math.random() * 3);
-	console.log(event);
+	let opcaoCertaTemp = perguntas[contador].certa - 1;
+	let cont = 0;
 
 	if (quantidadeCartas === 0) {
 		// Retirar uma resposta errada
-		console.log("do nothing");
+		for (let t = 0; t < 4; t++) {
+			if (t === opcaoCertaTemp) {
+				continue;
+			} else {
+				opcoes[t].parentElement.classList.add("sumir");
+				cont += 1;
+			}
+
+			if (cont === 1) {
+				break;
+			}
+		}
 	} else if (quantidadeCartas === 1) {
-		console.log("Sorteia 2 cartas");
+		for (let t = 0; t < 4; t++) {
+			if (t === opcaoCertaTemp) {
+				continue;
+			} else {
+				opcoes[t].parentElement.classList.add("sumir");
+				cont += 1;
+			}
+
+			if (cont === 2) {
+				break;
+			}
+		}
 	} else {
-		console.log("sorteia 3 cartas");
+		for (let t = 0; t < 4; t++) {
+			if (t === opcaoCertaTemp) {
+				continue;
+			} else {
+				opcoes[t].parentElement.classList.add("sumir");
+				cont += 1;
+			}
+
+			if (cont === 3) {
+				break;
+			}
+		}
 	}
 }
 
@@ -206,4 +239,14 @@ function sitaucaoAtual(valores = []) {
 	for (let i = 0; i < situacoes.length; i++) {
 		situacoes[i].innerHTML = formataValor(valores[i]);
 	}
+}
+
+// função para pular a pergunta atual, pode ser usada somente uma vez
+function pularPergunta() {
+	console.log("pulou a pergunta");
+
+	setTimeout(() => {
+		contador += 1;
+		geraPergunta(perguntas[contador]);
+	}, 2000);
 }
