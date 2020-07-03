@@ -216,6 +216,15 @@ body {
     color: black;
     background-color: #f7f007; }
 
+.msg-aviso {
+  font-family: "Raleway", sans-serif;
+  color: #f7f007;
+  font-weight: bold;
+  text-align: justify;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.1em; }
+
 .container-respostas {
   grid-column: 2/2;
   grid-row: 1/5;
@@ -324,5 +333,14 @@ body {
   color: #e1e3e1;
   font-family: "Lobster", cursive;
   font-size: 32px; }
+
+.acertou {
+  background-color: green; }
+
+.errou {
+  background-color: red; }
+
+.sumir {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

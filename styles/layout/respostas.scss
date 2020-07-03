@@ -46,6 +46,18 @@
     }
 }
 
+.msg-aviso {
+    font-family: $main-font;
+    color: $yellow-color;
+    font-weight: bold;
+    text-align: justify;
+
+    align-self: center;
+    justify-self: center;
+
+    font-size: 1.1em;
+}
+
 .container-respostas {
     grid-column: 2/2;
     grid-row: 1/5;

@@ -1,3 +1,4 @@
+// Aqui vai ficar somente o array que armazena todas as perguntas
 const perguntas = [
 	{
 		pergunta: "De quem é a famosa frase “Penso, logo existo”?",
@@ -165,11 +166,3 @@ const perguntas = [
 		dificuldade: 1,
 	},
 ];
-
-function tornarMaiusculo(s) {
-	let tempString = "";
-	for (let letter of s) {
-		tempString += letter.toUpperCase();
-	}
-	return tempString;
-}
