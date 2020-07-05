@@ -1,4 +1,6 @@
+// Falta atualizar a situação nas outras respostas certas sem ser a opção 1
 geraPergunta(perguntas[contador]);
+sitaucaoAtual([0, 10, 50]);
 
 // Pega o elemento que colocará o texto na tela
 let msgAviso = document.querySelector(".msg-aviso");
@@ -39,12 +41,15 @@ function verificaResposta(event) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
 			contador += 1;
+			dinheiro += 50;
 
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
 				msgAviso.innerText = "";
+				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
 			}, 2000);
+
 		} else {
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
@@ -56,6 +61,9 @@ function verificaResposta(event) {
 					}`
 				);
 				contador = 0;
+				dinheiro = 0;
+				pulos = [];
+				sitaucaoAtual([0, 10, 50]);
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
 				msgAviso.innerText = "";
@@ -65,11 +73,13 @@ function verificaResposta(event) {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			dinheiro += 50;
 			contador += 1;
 
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
+				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -83,7 +93,10 @@ function verificaResposta(event) {
 					}`
 				);
 				contador = 0;
+				pulos = [];
+				dinheiro = 0
 				geraPergunta(perguntas[contador]);
+				sitaucaoAtual([0, 10, 50]);
 				event.path[1].classList.remove("errou");
 				msgAviso.innerText = "";
 			}, 2000);
@@ -92,11 +105,13 @@ function verificaResposta(event) {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			dinheiro += 50;
 			contador += 1;
 
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
+				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -110,6 +125,9 @@ function verificaResposta(event) {
 					}`
 				);
 				contador = 0;
+				pulos = [];
+				dinheiro = 0;
+				sitaucaoAtual([0, 10, 50]);
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
 				msgAviso.innerText = "";
@@ -119,11 +137,13 @@ function verificaResposta(event) {
 		if (Number(event.target.innerText) == opcaoCerta) {
 			msgAviso.innerHTML = "Você acertou a resposta!!!";
 			event.path[1].classList.add("acertou");
+			dinheiro += 50;
 			contador += 1;
 
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
+				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -137,6 +157,9 @@ function verificaResposta(event) {
 					}`
 				);
 				contador = 0;
+				pulos = [];
+				dinheiro = 0;
+				sitaucaoAtual([0, 10, 50]);
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
 				msgAviso.innerText = "";
@@ -147,7 +170,18 @@ function verificaResposta(event) {
 
 // Algumas funções importantes
 function pararJogo() {
-	alert('Implementar saída do Jogo');
+	if(dinheiro === 0){
+		alert(`Você terminou o jogo com ${formataValor(10)}`);
+	} else{
+		alert(`Você terminou o jogo com ${formataValor(dinheiro)}`);
+
+	}
+	contador = 0;
+	dinheiro = 0;
+	pulos = [];
+	sitaucaoAtual([0, 10, 50]);
+	geraPergunta(perguntas[contador]);
+
 }
 
 // Função que pega uma carta e retira entre 1 a 3 respostas pra ajudar o participante a acertar
@@ -233,13 +267,13 @@ function sitaucaoAtual(valores = []) {
 
 // função para pular a pergunta atual, pode ser usada somente uma vez
 function pularPergunta() {
-	alert(`Você tem direito a 3 pulos\nE já usou ${pulos.length}`);
-	
 	if(pulos.length === 3){
 		msgAviso.innerHTML = 'Você não pode mais pular';
 		return;
 	}
 
+	alert(`Você tem direito a 3 pulos\nE já usou ${pulos.length+1}`);
+	
 	pulos.push(1);
 
 	setTimeout(() => {
@@ -247,3 +281,4 @@ function pularPergunta() {
 		geraPergunta(perguntas[contador]);
 	}, 2000);
 }
+

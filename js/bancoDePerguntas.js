@@ -1,9 +1,21 @@
 // Aqui vai ficar somente o array que armazena todas as perguntas
 const perguntas = [
 	{
+		pergunta: "Qual a montanha mais alta do Brasil?",
+		certa: 1,
+		opcoes: ['Pico da Neblina', 'Pico Paraná', 'Monte Roraima', 'Pico da Bandeira'],
+		dificuldade: 1,
+	},
+	{
 		pergunta: "De quem é a famosa frase “Penso, logo existo”?",
 		certa: 3,
 		opcoes: ["Platão", "Galileu", "Descartes", "Sócrates"],
+		dificuldade: 1,
+	},
+	{
+		pergunta: "Como é a conjugação do verbo caber na 1.ª pessoa do singular do presente do indicativo?",
+		certa: 2,
+		opcoes: ["Ele cabe", "Eu caibo", "Eu cabo", "Nenhuma das alternativas"],
 		dificuldade: 1,
 	},
 	{
@@ -35,6 +47,13 @@ const perguntas = [
 		certa: 4,
 		opcoes: ["Legenda", "Conto", "Legendário", "Lenda"],
 		dificuldade: 1,
+	},
+	{
+		pergunta: "Quais das opções abaixo apresentam duas Maravilhas do Mundo Moderno?",
+		certa: 3,
+		opcoes: ["Chichén Itzá e Big Ben", "Torre Eiffel e Grande Muralha da China", "Cristo Redentor e Coliseu", "Ruínas de Petra e Torre de Pisa "],
+		dificuldade: 2, 
+
 	},
 	{
 		pergunta: "Qual o número mínimo de jogadores numa partida de futebol?",
@@ -177,15 +196,17 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Qual o maior animal terrestre?",
+		pergunta: "Quem foi o primeiro homem a pisar na lua e em que ano aconteceu?",
 		certa: 3,
 		opcoes: [
-			"Baleia Azul",
-			"Girafa",
-			"Elefante africano",
-			"Leão",
+			"Yuri Gagarin, em 1961",
+			"Neil Armstrong, em 1972",
+			"Neil Armstrong, em 1969",
+			"Yuri Gagarin, em 1969",
 		],
-		dificuldade: 1,
+		dificuldade: 2,
 	},
 	
 ];
+
+console.log(perguntas.length)
