@@ -1,31 +1,16 @@
 <h1>Show do Milhão para a Família Aguiar</h1>
 
-Criação do jogo do Show do Milhão. Preferi utilizar HTML, CSS com Sass e Vanilla JS para o projeto.
+O projeto Show do Milhão é um jogo de perguntas e respostas no qual foram utilizadas as ferrmentas HTML, CSS com Sass e Vanilla JS, para sua criação. Seu objetivo é responder corretamente as perguntas até chegar no valor máximo de 1 milhão de reais.
 
-Comecei fazendo um design no figma, procurei manter um design limpo e minimalista que mantivesse a aparência parecida com a do programa televisivo.
+Seu design foi criado no figma, através de uma interface minimalista que manteve a aparência similar ao programa televisivo de mesmo nome.
 
-<h3> Observações: </h3>
+<h2>Funcionalidades do Jogo: </h2>
 
-Acabei me enrolando na hora de colocar alguns nomes de classe no HTML e CSS, além disso, me enrolei um pouco na organização dos scripts também.
 
-<h2> Pendente: </h2>
+- Para auxiliar o jogador a chegar ao prêmio máximo, foram colocados dois botões: Cartas e Pular.
 
--   Pular:
+- Sobre o botão Cartas: Auxilia o jogador de forma aleatória, retirando entre uma a três alternativas incorretas.
+- Sobre o botão Pular: Cada jogador possui 3 pulos que dão a opção de ir para uma outra pergunta, com prêmio de mesmo valor. 
 
-    -   Configurar o botão de pular para ir para a próxima pergunta.
+Acabadas as ajudas, o jogador pode utilizar o botão de Parar e receber o prêmio em dinheiro equivalente àquela pergunta. 
 
--   Cartas:
-
-    -   As cartas sorteiam um número de 1 a 3. Número esse que será a quantidade de respostas erradas a ser retirada das opções de respostas.
-
--   Classes:
-
-    -   Colocar classes que fazem a opção sumir quando for errada e o participante tiver usado a carta;
-    -   Colocar também classe que pinta o container de vermelho quando a opção estiver errada e uma que pinta de verde quando a resposta estiver certa.
-
--   Dificuldade:
-
-    -   colocar nos objetos o nível de dificuldade. Implementar alguma lógica que determinadas perguntas só apareceram quando o participantes tiver passado de um determinado nível. Vou dividir os níveis em <em>[easy, medium, hard]</em>, respectivamente, [1, 2, 3]. Achar uma maneira de sortear a próxima pergunta e levar em consideração quanto de dinheiro o participante tem para saber se a próxima pergunta será de qual nǘel de dificuldade.
-
--   Relógio:
-    -   Colocar um timer que limita o tempo que o participante tem para responder aquela pergunta
