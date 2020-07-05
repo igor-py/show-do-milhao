@@ -1,0 +1,13 @@
+#ganhou {
+    background-color: $header-color;
+    display: flex;
+    justify-content: center;
+}
+
+.ganhou {
+    margin-top: 10vh;
+
+    font-family: $title-font;
+    color: $yellow-color;
+    font-size: 8vh;
+}

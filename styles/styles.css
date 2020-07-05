@@ -334,6 +334,17 @@ body {
   font-family: "Lobster", cursive;
   font-size: 32px; }
 
+#ganhou {
+  background-color: #10106d;
+  display: flex;
+  justify-content: center; }
+
+.ganhou {
+  margin-top: 10vh;
+  font-family: "Anton", sans-serif;
+  color: #f7f007;
+  font-size: 8vh; }
+
 .acertou {
   background-color: green; }
 

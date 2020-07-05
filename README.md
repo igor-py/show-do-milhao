@@ -12,5 +12,5 @@ Seu design foi criado no figma, através de uma interface minimalista que mantev
 - Sobre o botão Cartas: Auxilia o jogador de forma aleatória, retirando entre uma a três alternativas incorretas.
 - Sobre o botão Pular: Cada jogador possui 3 pulos que dão a opção de ir para uma outra pergunta, com prêmio de mesmo valor. 
 
-Acabadas as ajudas, o jogador pode utilizar o botão de Parar e receber o prêmio em dinheiro equivalente àquela pergunta. 
+- Acabadas as ajudas, o jogador pode utilizar o botão de Parar e receber o prêmio em dinheiro equivalente àquela pergunta. 
 

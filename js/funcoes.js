@@ -15,9 +15,21 @@ function tornarMaiusculo(s) {
 }
 
 function geraPergunta(texto = {}) {
+	if (dinheiro === 1000) {
+		setTimeout(() => {
+			window.location.replace("../pages/ganhou.html");
+		}, 2500);
+	}
+
 	let pergunta = document.querySelector(".pergunta");
 
 	pergunta.innerHTML = tornarMaiusculo(texto.pergunta);
+
+	// Retirando a classe que faz sumir, quando o jogador utiliza as cartas
+	opcoes[0].parentElement.classList.remove("sumir");
+	opcoes[1].parentElement.classList.remove("sumir");
+	opcoes[2].parentElement.classList.remove("sumir");
+	opcoes[3].parentElement.classList.remove("sumir");
 
 	// Colocando as opções
 	opcoes[0].innerHTML = texto.opcoes[0];
@@ -32,7 +44,7 @@ function geraPergunta(texto = {}) {
 function verificaResposta(event) {
 	// Verifica se o jogador quer realmente confirmar a alternativa selecionada
 	const continuar = prompt("Está certo de sua resposta?");
-	if(continuar === null){
+	if (continuar === null) {
 		return;
 	}
 
@@ -47,18 +59,18 @@ function verificaResposta(event) {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
 				msgAviso.innerText = "";
-				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
+				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
 			}, 2000);
-
 		} else {
 			msgAviso.innerHTML = "Você errou a resposta!!!";
 			event.path[1].classList.add("errou");
 			// Avisar que o jogo acabou e reiniciar o jogo
 			setTimeout(() => {
 				alert(
-					`Você terminou com ${
-						document.querySelectorAll(".texto-aviso")[0].innerHTML
-					}`
+					`Você terminou cif (document.querySelectorAll(".texto-aviso")[2] === "1 MILHÃO") {
+						console.log("entrou 2");
+						msgAviso.innerHTML = "Pergunta valendo 1 Milhão";
+					}om ${document.querySelectorAll(".texto-aviso")[0].innerHTML}`
 				);
 				contador = 0;
 				dinheiro = 0;
@@ -79,7 +91,7 @@ function verificaResposta(event) {
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
-				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
+				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -94,7 +106,7 @@ function verificaResposta(event) {
 				);
 				contador = 0;
 				pulos = [];
-				dinheiro = 0
+				dinheiro = 0;
 				geraPergunta(perguntas[contador]);
 				sitaucaoAtual([0, 10, 50]);
 				event.path[1].classList.remove("errou");
@@ -111,7 +123,7 @@ function verificaResposta(event) {
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
-				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
+				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -143,7 +155,7 @@ function verificaResposta(event) {
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
-				sitaucaoAtual([dinheiro-50, dinheiro, dinheiro+50]);
+				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
 				msgAviso.innerText = "";
 			}, 2000);
 		} else {
@@ -162,7 +174,7 @@ function verificaResposta(event) {
 				sitaucaoAtual([0, 10, 50]);
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
-				msgAviso.innerText = "";
+				msgAviso.innerTexpulart = "";
 			}, 2000);
 		}
 	}
@@ -170,22 +182,27 @@ function verificaResposta(event) {
 
 // Algumas funções importantes
 function pararJogo() {
-	if(dinheiro === 0){
+	if (prompt(`Quer sair agora e levar ${formataValor(dinheiro)}`) === null) {
+		return;
+	}
+	if (dinheiro === 0) {
 		alert(`Você terminou o jogo com ${formataValor(10)}`);
-	} else{
+	} else {
 		alert(`Você terminou o jogo com ${formataValor(dinheiro)}`);
-
 	}
 	contador = 0;
 	dinheiro = 0;
 	pulos = [];
 	sitaucaoAtual([0, 10, 50]);
 	geraPergunta(perguntas[contador]);
-
 }
 
 // Função que pega uma carta e retira entre 1 a 3 respostas pra ajudar o participante a acertar
 function sorteiaCartas(event) {
+	if (prompt("Você quer realmente usar as cartas?") === null) {
+		return;
+	}
+
 	let quantidadeCartas = Math.floor(Math.random() * 3);
 	let opcaoCertaTemp = perguntas[contador].certa - 1;
 	let cont = 0;
@@ -201,9 +218,11 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 1) {
-				opcoes.forEach((opcao) => {
-					opcao.classList.remove('sumir');
-				})
+				setTimeout(() => {
+					msgAviso.innerHTML = "Você não pode mais usar as cartas";
+					document.querySelector("#carta").classList.add("sumir");
+				}, 1000);
+
 				break;
 			}
 		}
@@ -217,9 +236,10 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 2) {
-				opcoes.forEach((opcao) => {
-					opcao.classList.remove('sumir');
-				})
+				setTimeout(() => {
+					msgAviso.innerHTML = "Você não pode mais usar as cartas";
+					document.querySelector("#carta").classList.add("sumir");
+				}, 1000);
 				break;
 			}
 		}
@@ -233,9 +253,10 @@ function sorteiaCartas(event) {
 			}
 
 			if (cont === 3) {
-				opcoes.forEach((opcao) => {
-					opcao.classList.remove('sumir');
-				})
+				setTimeout(() => {
+					msgAviso.innerHTML = "Você não pode mais usar as cartas";
+					document.querySelector("#carta").classList.add("sumir");
+				}, 1000);
 				break;
 			}
 		}
@@ -245,7 +266,6 @@ function sorteiaCartas(event) {
 // Função que coloca o MIL depois do número
 function formataValor(valor) {
 	if (valor === 1000) {
-		msgAviso.innerHTML = "Pergunta valendo 1 Milhão";
 		return `1 MILHÃO`;
 	} else if (valor === 0) {
 		return "NADA";
@@ -267,13 +287,14 @@ function sitaucaoAtual(valores = []) {
 
 // função para pular a pergunta atual, pode ser usada somente uma vez
 function pularPergunta() {
-	if(pulos.length === 3){
-		msgAviso.innerHTML = 'Você não pode mais pular';
+	if (pulos.length === 3) {
+		msgAviso.innerHTML = "Você não pode mais pular";
+		document.querySelector("#pular").classList.add("sumir");
 		return;
 	}
 
-	alert(`Você tem direito a 3 pulos\nE já usou ${pulos.length+1}`);
-	
+	alert(`Você tem direito a 3 pulos\nE já usou ${pulos.length + 1}`);
+
 	pulos.push(1);
 
 	setTimeout(() => {
@@ -281,4 +302,3 @@ function pularPergunta() {
 		geraPergunta(perguntas[contador]);
 	}, 2000);
 }
-

@@ -3,7 +3,12 @@ const perguntas = [
 	{
 		pergunta: "Qual a montanha mais alta do Brasil?",
 		certa: 1,
-		opcoes: ['Pico da Neblina', 'Pico Paraná', 'Monte Roraima', 'Pico da Bandeira'],
+		opcoes: [
+			"Pico da Neblina",
+			"Pico Paraná",
+			"Monte Roraima",
+			"Pico da Bandeira",
+		],
 		dificuldade: 1,
 	},
 	{
@@ -13,7 +18,8 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Como é a conjugação do verbo caber na 1.ª pessoa do singular do presente do indicativo?",
+		pergunta:
+			"Como é a conjugação do verbo caber na 1.ª pessoa do singular do presente do indicativo?",
 		certa: 2,
 		opcoes: ["Ele cabe", "Eu caibo", "Eu cabo", "Nenhuma das alternativas"],
 		dificuldade: 1,
@@ -36,55 +42,26 @@ const perguntas = [
 		dificuldade: 2,
 	},
 	{
-		pergunta:
-			"Atualmente, quantos elementos químicos a tabela periódica possui?",
-		certa: 4,
-		opcoes: ["113", "109", "118", "92"],
-		dificuldade: 3,
-	},
-	{
 		pergunta: "O que a palavra legend significa em português?",
 		certa: 4,
 		opcoes: ["Legenda", "Conto", "Legendário", "Lenda"],
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Quais das opções abaixo apresentam duas Maravilhas do Mundo Moderno?",
-		certa: 3,
-		opcoes: ["Chichén Itzá e Big Ben", "Torre Eiffel e Grande Muralha da China", "Cristo Redentor e Coliseu", "Ruínas de Petra e Torre de Pisa "],
-		dificuldade: 2, 
-
-	},
-	{
-		pergunta: "Qual o número mínimo de jogadores numa partida de futebol?",
-		certa: 3,
-		opcoes: ["8", "10", "7", "5"],
-		dificuldade: 2,
-	},
-	{
-		pergunta: "De onde é a invenção do chuveiro elétrico?",
+		pergunta:
+			"Quais das opções abaixo apresentam duas Maravilhas do Mundo Moderno?",
 		certa: 3,
 		opcoes: [
-			"França",
-			"Inglaterra",
-			"Brasil",
-			"Portugal",
+			"Chichén Itzá e Big Ben",
+			"Torre Eiffel e Grande Muralha da China",
+			"Cristo Redentor e Coliseu",
+			"Ruínas de Petra e Torre de Pisa ",
 		],
 		dificuldade: 2,
 	},
 	{
-		pergunta: "Quais as duas datas que são comemoradas em novembro?",
-		certa: 2,
-		opcoes: [
-			"Independência do Brasil e Dia da Bandeira",
-			"Proclamação da República e Dia Nacional da Consciência Negra",
-			"Dia do Médico e Dia de São Lucas",
-			"Black Friday e Dia da Árvore",
-		],
-		dificuldade: 2,
-	},
-	{
-		pergunta: "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+		pergunta:
+			"Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
 		certa: 4,
 		opcoes: [
 			"Jânio Quadros",
@@ -93,6 +70,12 @@ const perguntas = [
 			"João Goulart",
 		],
 		dificuldade: 3,
+	},
+	{
+		pergunta: "De onde é a invenção do chuveiro elétrico?",
+		certa: 3,
+		opcoes: ["França", "Inglaterra", "Brasil", "Portugal"],
+		dificuldade: 2,
 	},
 	{
 		pergunta: 'Quem pintou "Guernica"?',
@@ -106,7 +89,14 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
-		pergunta: 'Qual o livro mais vendido no mundo a seguir à Bíblia?',
+		pergunta:
+			"Quantos graus são necessário para que dois ângulos sejam complementares?",
+		certa: 3,
+		opcoes: ["45°", "60°", "90°", "180°"],
+		dificuldade: 2,
+	},
+	{
+		pergunta: "Qual o livro mais vendido no mundo a seguir à Bíblia?",
 		certa: 2,
 		opcoes: [
 			"O Senhor dos Anéis",
@@ -117,26 +107,15 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Quanto tempo a luz do Sol demora para chegar à Terra?",
-		certa: 4,
-		opcoes: ["12 minutos", "1 dia", "12 horas", "8 minutos"],
-		dificuldade: 3,
-	},
-	{
 		pergunta: "Qual a nacionalidade de Che Guevara?",
 		certa: 1,
 		opcoes: ["Argentina", "Cubana", "Boliviana", "Panamenha"],
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Em que ordem surgiram os modelos atômicos?",
+		pergunta: "Qual o metal cujo símbolo químico é o Au?",
 		certa: 4,
-		opcoes: [
-			"Thomson, Dalton, Rutherford, Rutherford-Bohr",
-			"Rutherford-Bohr, Rutherford, Thomson, Dalton",
-			"Dalton, Thomson, Rutherford-Bohr, Rutherford",
-			"Dalton, Thomson, Rutherford, Rutherford-Bohr",
-		],
+		opcoes: ["Cobre", "Prata", "Mercúrio", "Ouro"],
 		dificuldade: 3,
 	},
 	{
@@ -162,6 +141,12 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
+		pergunta: "Qual o número mínimo de jogadores numa partida de futebol?",
+		certa: 3,
+		opcoes: ["8", "10", "7", "5"],
+		dificuldade: 2,
+	},
+	{
 		pergunta:
 			"Qual o tema do famoso discurso Eu Tenho um Sonho, de Martin Luther King?",
 		certa: 1,
@@ -185,18 +170,22 @@ const perguntas = [
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Qual foi o recurso utilizado inicialmente pelo homem para explicar a origem das coisas?",
+		pergunta:
+			"Qual foi o recurso utilizado inicialmente pelo homem para explicar a origem das coisas?",
 		certa: 2,
-		opcoes: [
-			"A Filosofia",
-			"A Mitologia",
-			"A Biologia",
-			"A Astronomia",
-		],
+		opcoes: ["A Filosofia", "A Mitologia", "A Biologia", "A Astronomia"],
 		dificuldade: 1,
 	},
 	{
-		pergunta: "Quem foi o primeiro homem a pisar na lua e em que ano aconteceu?",
+		pergunta:
+			"Atualmente, quantos elementos químicos a tabela periódica possui?",
+		certa: 4,
+		opcoes: ["113", "109", "118", "92"],
+		dificuldade: 3,
+	},
+	{
+		pergunta:
+			"Quem foi o primeiro homem a pisar na lua e em que ano aconteceu?",
 		certa: 3,
 		opcoes: [
 			"Yuri Gagarin, em 1961",
@@ -206,7 +195,15 @@ const perguntas = [
 		],
 		dificuldade: 2,
 	},
-	
+	{
+		pergunta: "Em que ordem surgiram os modelos atômicos?",
+		certa: 4,
+		opcoes: [
+			"Thomson, Dalton, Rutherford, Rutherford-Bohr",
+			"Rutherford-Bohr, Rutherford, Thomson, Dalton",
+			"Dalton, Thomson, Rutherford-Bohr, Rutherford",
+			"Dalton, Thomson, Rutherford, Rutherford-Bohr",
+		],
+		dificuldade: 3,
+	},
 ];
-
-console.log(perguntas.length)
