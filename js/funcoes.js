@@ -16,9 +16,9 @@ function tornarMaiusculo(s) {
 
 function geraPergunta(texto = {}) {
 	if (dinheiro === 1000) {
-		setTimeout(() => {
-			window.location.replace("../pages/ganhou.html");
-		}, 2500);
+		window.location.replace("../pages/ganhou.html");
+	} else if (dinheiro === 950) {
+		msgAviso.innerText = "Pergunta valendo 1 Milhão!!!";
 	}
 
 	let pergunta = document.querySelector(".pergunta");
@@ -58,7 +58,12 @@ function verificaResposta(event) {
 			setTimeout(() => {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
-				msgAviso.innerText = "";
+				if (dinheiro === 950) {
+					msgAviso.innerText = "Pergunta valendo 1 Milhão !!!";
+				} else {
+					msgAviso.innerText = "";
+				}
+
 				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
 			}, 2000);
 		} else {
@@ -67,10 +72,9 @@ function verificaResposta(event) {
 			// Avisar que o jogo acabou e reiniciar o jogo
 			setTimeout(() => {
 				alert(
-					`Você terminou cif (document.querySelectorAll(".texto-aviso")[2] === "1 MILHÃO") {
-						console.log("entrou 2");
-						msgAviso.innerHTML = "Pergunta valendo 1 Milhão";
-					}om ${document.querySelectorAll(".texto-aviso")[0].innerHTML}`
+					`Você terminou com ${
+						document.querySelectorAll(".texto-aviso")[0].innerHTML
+					}`
 				);
 				contador = 0;
 				dinheiro = 0;
@@ -92,7 +96,11 @@ function verificaResposta(event) {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
 				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
-				msgAviso.innerText = "";
+				if (dinheiro === 950) {
+					msgAviso.innerText = "Pergunta valendo 1 Milhão !!!";
+				} else {
+					msgAviso.innerText = "";
+				}
 			}, 2000);
 		} else {
 			msgAviso.innerHTML = "Você errou a resposta!!!";
@@ -124,7 +132,11 @@ function verificaResposta(event) {
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("acertou");
 				sitaucaoAtual([dinheiro - 50, dinheiro, dinheiro + 50]);
-				msgAviso.innerText = "";
+				if (dinheiro === 950) {
+					msgAviso.innerText = "Pergunta valendo 1 Milhão !!!";
+				} else {
+					msgAviso.innerText = "";
+				}
 			}, 2000);
 		} else {
 			msgAviso.innerHTML = "Você errou a resposta!!!";
@@ -142,7 +154,11 @@ function verificaResposta(event) {
 				sitaucaoAtual([0, 10, 50]);
 				geraPergunta(perguntas[contador]);
 				event.path[1].classList.remove("errou");
-				msgAviso.innerText = "";
+				if (dinheiro === 950) {
+					msgAviso.innerText = "Pergunta valendo 1 Milhão !!!";
+				} else {
+					msgAviso.innerText = "";
+				}
 			}, 2000);
 		}
 	} else if (event.target.innerText === "4") {
